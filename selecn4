@@ -1,0 +1,35 @@
+
+Algoritmo Bono_Productividad
+    Definir sueldoBase, productividad Como Real
+    Definir porcentajeBono, bono, totalPagar Como Real
+
+    Escribir "Ingrese el sueldo base:"
+    Leer sueldoBase
+    Escribir "Ingrese el porcentaje de productividad (0-100):"
+    Leer productividad
+
+    Si sueldoBase < 0 O productividad < 0 O productividad > 100 Entonces
+        Escribir "Error: los datos ingresados no son validos."
+    Sino
+        Si productividad >= 90 Entonces
+            porcentajeBono = 20
+        Sino
+            Si productividad >= 70 Entonces
+                porcentajeBono = 10
+            Sino
+                Si productividad >= 50 Entonces
+                    porcentajeBono = 5
+                Sino
+                    porcentajeBono = 0
+                FinSi
+            FinSi
+        FinSi
+
+        bono = sueldoBase * porcentajeBono / 100
+        totalPagar = sueldoBase + bono
+
+        Escribir "Porcentaje del bono: ", porcentajeBono, "%"
+        Escribir "Valor del bono: $", bono
+        Escribir "Total a pagar: $", totalPagar
+    FinSi
+FinAlgoritmo
